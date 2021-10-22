@@ -1,5 +1,7 @@
 const express = require('express');
+
 const app = express();
+app.use(express.json());
 const port = 3000;
 
 let topScore = 0;
@@ -10,8 +12,8 @@ app.get('/score', (req, res) => {
 });
 
 app.post('/score', (req, res) => {
-    console.log('Received Score Request!');
-    topScore += 1;
+    console.log(req.body.Score);
+    topScore = req.body.Score;
     res.send(topScore.toString());
 });
 
