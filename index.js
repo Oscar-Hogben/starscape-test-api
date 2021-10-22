@@ -7,7 +7,7 @@ const port = 3000;
 let topScore = 0;
 
 app.get('/score', (req, res) => {
-    console.log('Received Score Request!');
+    console.log('Received Score Request!!');
     res.send(topScore.toString());
 });
 
